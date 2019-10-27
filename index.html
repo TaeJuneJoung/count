@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css"></style>
+</head>
+<body>
+    <div class="title text-center mb-3">찬/반 Counter</div>
+    <div class="container text-center">
+        <div class="mb-3">
+            <div class="sub-title">찬성</div>
+            <button id="agreeMinusBtn" class="btn-large" onclick="minus('agree')">-</button>
+            <span id="agree" class="btn-text">0</span>
+            <button id="agreePlusBtn" class="btn-large" onclick="plus('agree')">+</button>
+        </div>
+        <div class="mb-3">
+            <div class="sub-title">반대</div>
+            <button id="oppositionMinusBtn" class="btn-large" onclick="minus('opposition')">-</button>
+            <span id="opposition" class="btn-text">0</span>
+            <button id="oppositionPlusBtn" class="btn-large" onclick="plus('opposition')">+</button>
+        </div>
+        
+        <div id="errorMessage" class="error-message"></div>
+        <div class="photo mb-3">
+            <img class="photo-img" src="https://images.unsplash.com/photo-1545655860-c8ca502605c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1118&q=80" />
+        </div>
+    </div>
+        
+    <script src="./js/index.js"></script>
+</body>
+</html>
