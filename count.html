@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <style>
+        .container {
+            width: 100%;
+        }
+        .title {
+            font-size: 30px;
+        }
+        .sub-title {
+            font-size: 20px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .btn-large {
+            font-size: 30px;
+            width: 60px;
+        }
+        .btn-text {
+            font-size: 30px;
+            margin: 0 20px 0 20px;
+        }
+        .error-message {
+            height: 20px;
+            margin-bottom: 10px;
+            color: #FF5722;
+        }
+        .mb-3 {
+            margin-bottom: 3rem;
+        }
+        .photo {
+            width: 100%;
+            height: 300px;
+        }
+        .photo-img {
+            height: 100%;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="title text-center mb-3">찬/반 Counter</div>
+    <div class="container text-center">
+        <div class="mb-3">
+            <div class="sub-title">찬성</div>
+            <button id="agreeMinusBtn" class="btn-large" onclick="minus('agree')">-</button>
+            <span id="agree" class="btn-text">0</span>
+            <button id="agreePlusBtn" class="btn-large" onclick="plus('agree')">+</button>
+        </div>
+        <div class="mb-3">
+            <div class="sub-title">반대</div>
+            <button id="oppositionMinusBtn" class="btn-large" onclick="minus('opposition')">-</button>
+            <span id="opposition" class="btn-text">0</span>
+            <button id="oppositionPlusBtn" class="btn-large" onclick="plus('opposition')">+</button>
+        </div>
+        
+        <div id="errorMessage" class="error-message"></div>
+        <div class="photo mb-3">
+            <img class="photo-img" src="https://images.unsplash.com/photo-1545655860-c8ca502605c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1118&q=80" />
+        </div>
+    </div>
+        
+    <script>
+        let errorMessage = document.getElementById('errorMessage')
+        function minus(target) {
+            let targetElement = document.getElementById(target)
+            if (targetElement.textContent == 0) {
+                errorMessage.innerText = "0아래로 내려갈 순 없습니다."
+                setTimeout(function() {
+                    errorMessage.innerText = ""
+                }, 3000)
+            } else {
+                targetElement.innerText--
+            }
+        }
+
+        function plus(target) {
+            let targetElement = document.getElementById(target)
+            targetElement.innerText++
+            if (targetElement.textContent > 0) {
+                errorMessage.innerText = ""
+            }
+        }
+
+
+    </script>
+</body>
+</html>
